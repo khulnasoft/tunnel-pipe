@@ -1,4 +1,4 @@
-FROM khulnasoft/tunnel:0.29.2
+FROM khulnasoft/tunnel:latest
 
 COPY pipe /
 
