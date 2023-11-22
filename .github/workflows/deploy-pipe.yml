@@ -1,11 +1,10 @@
 name: deploy pipe
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - v*
-    branch:
-      - main
 
 jobs:
   build:
