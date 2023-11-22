@@ -76,7 +76,7 @@ pipelines:
 It's also possible to scan your private registry with Tunnel's built-in image scan. All you have to do is set ENV vars.
 
 #### Docker Hub registry
-Docker Hub needs `TRIVY_USERNAME` and `TRIVY_PASSWORD`.
+Docker Hub needs `TUNNEL_USERNAME` and `TUNNEL_PASSWORD`.
 You don't need to set ENV vars when downloading from a public repository.
 ```yaml
 image:
@@ -94,8 +94,8 @@ pipelines:
               format: 'template'
               template: '@/contrib/sarif.tpl'
               output: 'tunnel-results.sarif'
-              TRIVY_USERNAME: Username
-              TRIVY_PASSWORD: Password  
+              TUNNEL_USERNAME: Username
+              TUNNEL_PASSWORD: Password  
 ```
 
 #### AWS ECR (Elastic Container Registry)
@@ -149,8 +149,8 @@ pipelines:
 ```
 
 #### Self-Hosted
-BasicAuth server needs `TRIVY_USERNAME` and `TRIVY_PASSWORD`.
-if you want to use 80 port, use NonSSL `TRIVY_NON_SSL=true`
+BasicAuth server needs `TUNNEL_USERNAME` and `TUNNEL_PASSWORD`.
+if you want to use 80 port, use NonSSL `TUNNEL_NON_SSL=true`
 ```yaml
 image: 
     name: atlassian/default-image:2
@@ -167,8 +167,8 @@ pipelines:
               format: 'template'
               template: '@/contrib/sarif.tpl'
               output: 'tunnel-results.sarif'
-              TRIVY_USERNAME: Username
-              TRIVY_PASSWORD: Password   
+              TUNNEL_USERNAME: Username
+              TUNNEL_PASSWORD: Password   
 ```
 
 ## Customizing
